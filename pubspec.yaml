@@ -37,6 +37,7 @@ dependencies:
   device_preview: ^1.3.1
   hexcolor: ^3.1.3
   google_fonts: ^8.0.2
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+
+  assets:
+    - assets/plant.jpg
+    - assets/hand_bag.png
+    - assets/jam.png
+    - assets/pot.png
+    - assets/sofa_cloth.png
+    - assets/table_cloth.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

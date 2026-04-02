@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project_2026/home_layout.dart';
 import 'package:graduation_project_2026/view/login_screen.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: loginScreen(),
+      home: homeLayout(),
       debugShowCheckedModeBanner: false,
     );
   }
