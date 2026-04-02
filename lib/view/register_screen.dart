@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project_2026/core/constant/components.dart';
-import 'package:graduation_project_2026/core/theme/theme_data.dart';
 import 'package:graduation_project_2026/home_layout.dart';
-import 'package:graduation_project_2026/view/register_screen.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:graduation_project_2026/view/login_screen.dart';
 
-class loginScreen extends StatefulWidget {
-  const loginScreen({super.key});
+import '../core/theme/theme_data.dart';
+
+class registerScreen extends StatefulWidget {
+  const registerScreen({super.key});
 
   @override
-  State<loginScreen> createState() => _loginScreenState();
+  State<registerScreen> createState() => _registerScreenState();
 }
 
 bool isChecked = false;
 bool visible = false;
+bool visibleConfirm = false;
 
-class _loginScreenState extends State<loginScreen> {
+class _registerScreenState extends State<registerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +32,37 @@ class _loginScreenState extends State<loginScreen> {
             child: Column(
               spacing: 15,
               children: [
+                Column(
+                  spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text('الاسم الكامل', style: ThemeFonts().black),
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintText: 'أدخلي اسمك الكامل',
+                        hintStyle: ThemeFonts().gray,
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: ThemeColors().gray,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey, width: 1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey, width: 2),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
                 Column(
                   spacing: 10,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -101,28 +133,76 @@ class _loginScreenState extends State<loginScreen> {
                   ],
                 ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'نسيت كلمه المرور ؟',
-                        style: ThemeFonts().red,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Text('تذكرني', style: ThemeFonts().black),
-                        Checkbox(
-                          value: isChecked,
-                          onChanged: (value) {
+                    Text('تأكيد كلمه المرور', style: ThemeFonts().black),
+                    TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: visibleConfirm ? false : true,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.lock, color: ThemeColors().gray),
+                        prefixIconColor: Colors.grey,
+                        suffixIcon: IconButton(
+                          onPressed: () {
                             setState(() {
-                              isChecked = value!;
+                              visibleConfirm = !visibleConfirm;
                             });
                           },
+                          icon: Icon(
+                            visibleConfirm
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: ThemeColors().gray,
+                          ),
                         ),
-                      ],
+                        suffixIconColor: Colors.grey,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey, width: 1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey, width: 2),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: ' أوافق علي ',
+                            style: ThemeFonts().black,
+                          ),
+                          TextSpan(
+                            text: ' الشروط و الأحكام ',
+                            style: ThemeFonts().red,
+                          ),
+                          TextSpan(text: ' و ', style: ThemeFonts().black),
+                          TextSpan(
+                            text: 'سياسه الخصوصيه',
+                            style: ThemeFonts().red,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Checkbox(
+                      value: isChecked,
+                      onChanged: (value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -139,9 +219,11 @@ class _loginScreenState extends State<loginScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: MaterialButton(
-                          onPressed: () {navigateTo(context, homeLayout());},
+                          onPressed: () {
+                            navigateTo(context, homeLayout());
+                          },
                           child: Text(
-                            'تسجيل الدخول',
+                            'إنشاء الحساب',
                             style: ThemeFonts().white,
                           ),
                         ),
@@ -177,10 +259,12 @@ class _loginScreenState extends State<loginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton(
-                      onPressed: () {navigateTo(context, registerScreen());},
-                      child: Text('سجلي الأن', style: ThemeFonts().red),
+                      onPressed: () {
+                        navigateTo(context, loginScreen());
+                      },
+                      child: Text('سجلي الدخول', style: ThemeFonts().red),
                     ),
-                    Text('ليس لديك حساب ؟', style: ThemeFonts().black),
+                    Text('لديك حساب بالفعل ؟', style: ThemeFonts().black),
                   ],
                 ),
               ],

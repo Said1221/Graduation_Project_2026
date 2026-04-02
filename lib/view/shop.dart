@@ -41,7 +41,7 @@ class _shopScreenState extends State<shopScreen> {
       'salary' : '٢٨٠'
     },
     {
-      'image' : 'sofa_cloth.png',
+      'image' : 'assets/sofa_cloth.png',
       'title' : 'قطعة كروشيه مفرش أريكة',
       'from' : 'من: سارة إبراهيم',
       'rate' : '51',
@@ -69,7 +69,7 @@ class _shopScreenState extends State<shopScreen> {
                 Container(
                   decoration: BoxDecoration(
                       color: ThemeColors().white,
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
                         color : Colors.black.withOpacity(0.1),

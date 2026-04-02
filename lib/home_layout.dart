@@ -18,9 +18,15 @@ class homeLayout extends StatelessWidget {
           return Scaffold(
             body: cubit.Screens[cubit.currentIndex],
             bottomNavigationBar: BottomNavigationBar(
+
               selectedItemColor: ThemeColors().red,
-              selectedLabelStyle: ThemeFonts().gray,
+              unselectedItemColor: ThemeColors().black,
+
+              selectedLabelStyle: ThemeFonts().red,
               unselectedLabelStyle: ThemeFonts().black,
+
+
+
 
 
               currentIndex: cubit.currentIndex,
@@ -32,6 +38,10 @@ class homeLayout extends StatelessWidget {
               },
 
               items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.model_training_outlined),
+                  label: 'التدريب',
+                ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.work),
                   label: 'فرص عمل',

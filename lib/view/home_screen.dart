@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project_2026/core/constant/components.dart';
+import 'package:graduation_project_2026/view/shop.dart';
+import 'package:graduation_project_2026/viewModel/cubit.dart';
 
 import '../core/theme/theme_data.dart';
 
@@ -62,11 +65,13 @@ class homeScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          AppCubit.get(context).changeNavBar(0);
+                        },
                         child: Row(
                           spacing: 2,
                           children: [
-                            Icon(Icons.arrow_back , color: ThemeColors().yellow,),
+                            Icon(Icons.arrow_back, color: ThemeColors().yellow),
                             Text('انضمي إلينا', style: ThemeFonts().yellow),
                           ],
                         ),
@@ -81,11 +86,13 @@ class homeScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          AppCubit.get(context).changeNavBar(2);
+                        },
                         child: Row(
                           spacing: 2,
                           children: [
-                            Icon(Icons.arrow_back , color: ThemeColors().white,),
+                            Icon(Icons.arrow_back, color: ThemeColors().white),
                             Text('تصفحي السوق', style: ThemeFonts().white),
                           ],
                         ),
@@ -111,10 +118,15 @@ class homeScreen extends StatelessWidget {
                               double value,
                               Widget? child,
                             ) {
-                              return Text('+${value.toInt()}' , style: ThemeFonts().yellow.copyWith(fontWeight: FontWeight.bold),);
+                              return Text(
+                                '+${value.toInt()}',
+                                style: ThemeFonts().yellow.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              );
                             },
                       ),
-                      Text('فرصه عمل' , style: ThemeFonts().black,),
+                      Text('فرصه عمل', style: ThemeFonts().black),
                     ],
                   ),
                   Column(
@@ -128,10 +140,15 @@ class homeScreen extends StatelessWidget {
                               double value,
                               Widget? child,
                             ) {
-                              return Text('+${value.toInt()}',style: ThemeFonts().yellow.copyWith(fontWeight: FontWeight.bold),);
+                              return Text(
+                                '+${value.toInt()}',
+                                style: ThemeFonts().yellow.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              );
                             },
                       ),
-                      Text('منتج للبيع', style: ThemeFonts().black,),
+                      Text('منتج للبيع', style: ThemeFonts().black),
                     ],
                   ),
                   Column(
@@ -145,10 +162,15 @@ class homeScreen extends StatelessWidget {
                               double value,
                               Widget? child,
                             ) {
-                              return Text('+${value.toInt()}',style: ThemeFonts().yellow.copyWith(fontWeight: FontWeight.bold),);
+                              return Text(
+                                '+${value.toInt()}',
+                                style: ThemeFonts().yellow.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              );
                             },
                       ),
-                      Text('امراه تم تمكينها', style: ThemeFonts().black,),
+                      Text('امراه تم تمكينها', style: ThemeFonts().black),
                     ],
                   ),
                 ],

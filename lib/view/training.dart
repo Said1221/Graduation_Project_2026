@@ -3,74 +3,80 @@ import 'package:hexcolor/hexcolor.dart';
 
 import '../core/theme/theme_data.dart';
 
-class hiringScreen extends StatefulWidget {
-  const hiringScreen({super.key});
+class trainingScreen extends StatefulWidget {
+  const trainingScreen({super.key});
 
   @override
-  State<hiringScreen> createState() => _hiringScreenState();
+  State<trainingScreen> createState() => _trainingScreenState();
 }
 
-class _hiringScreenState extends State<hiringScreen> {
+class _trainingScreenState extends State<trainingScreen> {
   var items = [
     {
-      'title' : 'ممثلة خدمة عملاء',
-      'from' : 'شركة تقنية عالمية',
-      'type' : 'دوام كامل',
-      'bgColor' : '#dbeafe',
-      'textColor' : '#1e40af',
-      'salary' : '6,000 - 8,000 ج.م',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['التحدث باللغة العربية والإنجليزية','خبرة سابقة في خدمة العملاء','مهارات اتصال ممتازة']
-    },
-    {
-      'title' : 'كاتبة محتوى إبداعي',
-      'from' : 'منصة نشر رقمية',
-      'type' : 'عمل حر',
-      'bgColor' : '#F3E8FF',
-      'textColor' : '#6B21A8',
-      'salary' : 'من 2,000 ج.م شهرياً',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['كتابة محتوى جذاب وملهم','معرفة بوسائل التواصل الاجتماعي','القدرة على العمل بمرونة']
-    },
-    {
-      'title' : 'مديرة وسائط اجتماعية',
-      'from' : 'وكالة تسويق ديجيتال',
-      'type' : 'دوام جزئي',
-      'bgColor' : '#E7FCDC',
+      'image' : 'assets/1.png',
+      'title' : 'التسويق الرقمي والإعلانات',
+      'from' : 'المدرب: أ. د. أحمد السيد',
+      'description' : 'تعلمي استراتيجيات التسويق الحديثة وكيفية الوصول لعملاء جدد عبر الإنترنت',
+      'duration' : '8 أسابيع',
+      'subscriptions' : '342 مشاركة حالياً',
+      'type' : 'مبتدئ',
       'textColor' : '#166534',
-      'salary' : '4,500 - 6,000 ج.م',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['إدارة حسابات وسائل التواصل','تصميم وإنشاء محتوى جذاب','تحليل البيانات والإحصائيات']
+      'bgColor':'#E7FCDC',
     },
     {
-      'title' : 'مصممة جرافيكس',
-      'from' : 'استوديو تصميم عصري',
-      'type' : 'عمل حر',
-      'bgColor' : '#F3E8FF',
-      'textColor' : '#6B21A8',
-      'salary' : 'من 3,000 ج.م شهرياً',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['إتقان برامج التصميم الحديثة','إبداع وذوق فني عالي','القدرة على تحقيق رؤية العميل']
+      'image' : 'assets/2.png',
+      'title' : 'ريادة الأعمال والعمل الحر',
+      'from' : 'المدرب: م. أحمد محمد',
+      'description' : 'كيفية بدء مشروعك الخاص وإدارته بنجاح من البداية إلى الاحتراف',
+      'duration' : '10 أسابيع',
+      'subscriptions' : '287 مشاركة حالياً',
+      'type' : 'متوسط',
+      'textColor' : '#854d0e',
+      'bgColor':'#FEF9C3',
     },
     {
-      'title' : 'مدخلة بيانات',
-      'from' : 'شركة استشارات مالية',
-      'type' : 'دوام كامل',
-      'bgColor' : '#dbeafe',
-      'textColor' : '#1e40af',
-      'salary' : '5,000 - 7,000 ج.م',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['سرعة ودقة في إدخال البيانات','معرفة بأنظمة إدارة الجودة','اهتمام بالتفاصيل']
+      'image' : 'assets/3.png',
+      'title' : 'الحرف اليدويّة والفنون',
+      'from' : 'المدرب: الفنانة سامية حسن',
+      'description' : 'تعلمي فنون اليدويات الجميلة وحول أعمالك إلى مشروع مربح',
+      'duration' : '12 أسبوع',
+      'subscriptions' : '156 مشاركة حالياً',
+      'type' : 'مبتدئ',
+      'textColor' : '#166534',
+      'bgColor':'#E7FCDC',
     },
     {
-      'title' : 'مدرسة أونلاين',
-      'from' : 'منصة تعليمية عربية',
-      'type' : 'عمل حر',
-      'bgColor' : '#F3E8FF',
-      'textColor' : '#6B21A8',
-      'salary' : 'من 1,500 ج.م شهرياً',
-      'location' : 'عمل عن بُعد - مصر',
-      'requires' : ['درجة جامعية في التخصص المطلوب','مهارات تدريس متقدمة','صبر والتزام برسالة التعليم']
+      'image' : 'assets/4.png',
+      'title' : 'التصوير الفوتوغرافي الاحترافي',
+      'from' : 'المدرب: محمود علي - مصور محترف',
+      'description' : 'احترفي التصوير واستخدمي مهاراتك في كسب دخل إضافي عبر الإنترنت',
+      'duration' : '6 أسابيع',
+      'subscriptions' : '198 مشاركة حالياًً',
+      'type' : 'متوسط',
+      'textColor' : '#854d0e',
+      'bgColor':'#FEF9C3',
+    },
+    {
+      'image' : 'assets/5.png',
+      'title' : 'الخياطة والتفصيل الحديث',
+      'from' : 'المدرب: أستاذة ليلى إبراهيم',
+      'description' : 'تعلمي الخياطة من الصفر وأنشئي تصاميمك الخاصة وتوسعي سوقك',
+      'duration' : '9 أسابيع',
+      'subscriptions' : '312 مشاركة حالياً',
+      'type' : 'مبتدئ',
+      'textColor' : '#166534',
+      'bgColor':'#E7FCDC',
+    },
+    {
+      'image' : 'assets/6.png',
+      'title' : 'إدارة المشاريع الصغيرة',
+      'from' : 'المدرب: د. فاطمه محمد',
+      'description' : 'تعرفي على أفضل الممارسات في إدارة المشاريع والعمليات التجارية',
+      'duration' : '10 أسابيع',
+      'subscriptions' : '221 مشاركة حالياً',
+      'type' : 'متقدم',
+      'textColor' : '#991b1b',
+      'bgColor':'#FEE2E2',
     },
   ];
 
@@ -88,8 +94,8 @@ class _hiringScreenState extends State<hiringScreen> {
               spacing: 10,
               children: [
 
-                Text('فرص عمل عن بُعد' , style: ThemeFonts().red.copyWith(fontWeight: FontWeight.bold , fontSize: 20),),
-                Text('ابدئي من منزلك واستقلي مالياً - فرص عمل مرنة تناسب احتياجاتك' ,textAlign: TextAlign.center, style: ThemeFonts().black.copyWith(fontSize: 15),),
+                Text('ورش ودورات تدريبية' , style: ThemeFonts().red.copyWith(fontWeight: FontWeight.bold , fontSize: 20),),
+                Text('طوّري مهاراتك مع متخصصين وافتحي أبواباً جديدة للنجاح' , style: ThemeFonts().black.copyWith(fontSize: 15),),
 
                 Container(
                   decoration: BoxDecoration(
@@ -114,7 +120,7 @@ class _hiringScreenState extends State<hiringScreen> {
                           keyboardType: TextInputType.webSearch,
                           decoration: InputDecoration(
                             hintTextDirection: TextDirection.rtl,
-                            hintText: 'ابحثي عن وظيفه, شركة, أو مهاره...',
+                            hintText: 'ابحثي عن دوره, مدرب, أو موضوع...',
                             hintStyle: ThemeFonts().gray,
                             suffixIcon: Icon(
                               Icons.search,
@@ -138,8 +144,8 @@ class _hiringScreenState extends State<hiringScreen> {
                           spacing: 5,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text(':نوع العمل' , style: ThemeFonts().black.copyWith(fontWeight: FontWeight.bold),),
-                            Icon(Icons.work_outline , color: ThemeColors().red,size: 20,),
+                            Text(':المستوي' , style: ThemeFonts().black.copyWith(fontWeight: FontWeight.bold),),
+                            Icon(Icons.school_outlined , color: ThemeColors().red,size: 20,),
                           ],
                         ),
                         Directionality(
@@ -169,7 +175,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('دوام كامل' , style: ThemeFonts().black,),
+                                      child: Text('مبتدئ' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -181,7 +187,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('دوام جزئي' , style: ThemeFonts().black,),
+                                      child: Text('متوسط' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -193,7 +199,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('عمل حر' , style: ThemeFonts().black,),
+                                      child: Text('متقدم' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -205,7 +211,7 @@ class _hiringScreenState extends State<hiringScreen> {
                           spacing: 5,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text(':المجالات' , style: ThemeFonts().black.copyWith(fontWeight: FontWeight.bold),),
+                            Text(':المواضيع' , style: ThemeFonts().black.copyWith(fontWeight: FontWeight.bold),),
                             Icon(Icons.local_offer_outlined , color: ThemeColors().yellow,size: 20,),
                           ],
                         ),
@@ -216,30 +222,6 @@ class _hiringScreenState extends State<hiringScreen> {
                             runSpacing: 8.0, // المسافة الرأسية بين السطور لما ينزل سطر جديد
                             alignment: WrapAlignment.start,
                             children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(width: 1 , color: ThemeColors().gray)
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: MaterialButton(onPressed: (){} ,
-                                      child: Text('خدمه عملاء' , style: ThemeFonts().black,),
-                                    ),
-                                  )
-                              ),
-                              Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(width: 1 , color: ThemeColors().gray)
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: MaterialButton(onPressed: (){} ,
-                                      child: Text('كتابه' , style: ThemeFonts().black,),
-                                    ),
-                                  )
-                              ),
                               Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(30),
@@ -260,7 +242,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('تصميم' , style: ThemeFonts().black,),
+                                      child: Text('ريادة' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -272,7 +254,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('بيانات' , style: ThemeFonts().black,),
+                                      child: Text('حرف يدويه' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -284,7 +266,31 @@ class _hiringScreenState extends State<hiringScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: MaterialButton(onPressed: (){} ,
-                                      child: Text('تدريس' , style: ThemeFonts().black,),
+                                      child: Text('تصوير' , style: ThemeFonts().black,),
+                                    ),
+                                  )
+                              ),
+                              Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      border: Border.all(width: 1 , color: ThemeColors().gray)
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: MaterialButton(onPressed: (){} ,
+                                      child: Text('خياطة' , style: ThemeFonts().black,),
+                                    ),
+                                  )
+                              ),
+                              Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      border: Border.all(width: 1 , color: ThemeColors().gray)
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: MaterialButton(onPressed: (){} ,
+                                      child: Text('إدارة' , style: ThemeFonts().black,),
                                     ),
                                   )
                               ),
@@ -310,7 +316,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                 style: ThemeFonts().red
                             ),
                             TextSpan(
-                                text: 'وظيفه',
+                                text: 'دورة',
                                 style: ThemeFonts().black
                             )
                           ]
@@ -324,7 +330,6 @@ class _hiringScreenState extends State<hiringScreen> {
                   physics: NeverScrollableScrollPhysics(), // بنوقف الإسكروول بتاعها لو هي جوه سكرول تاني
                   itemCount: items.length,
                   itemBuilder: (BuildContext context , int index){
-
                     return Container(
                       decoration: BoxDecoration(
                           boxShadow:[
@@ -340,6 +345,7 @@ class _hiringScreenState extends State<hiringScreen> {
                       ),
                       child: Column(
                         children: [
+                          Image.asset('${items[index]['image']}'),
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
@@ -349,21 +355,14 @@ class _hiringScreenState extends State<hiringScreen> {
                                 Row(
                                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Icon(Icons.work_outline_sharp , color: ThemeColors().yellow,),
+                                    Icon(Icons.workspace_premium , color: ThemeColors().yellow,),
                                     Text('${items[index]['title']}' , style: ThemeFonts().red.copyWith(fontWeight: FontWeight.bold , fontSize: 15),),
                                   ],
                                 ),
-                                Text('${items[index]['from']}' , style: ThemeFonts().black,),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: HexColor('${items[index]['bgColor']}'),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text('${items[index]['type']}' , style: ThemeFonts().black.copyWith(color: HexColor('${items[index]['textColor']}')),),
-                                  ),
-                                ),
+                                Text('${items[index]['from']}' , style: ThemeFonts().black),
+
+                                Text('${items[index]['description']}' ,textAlign: TextAlign.end, style: ThemeFonts().black),
+
                                 Directionality(
                                   textDirection: TextDirection.rtl,
                                   child: Column(
@@ -373,44 +372,32 @@ class _hiringScreenState extends State<hiringScreen> {
                                       Row(
                                         spacing: 2,
                                         children: [
-                                          Icon(Icons.attach_money , size: 17, color: ThemeColors().yellow,),
-                                          Text('${items[index]['salary']}' , style: ThemeFonts().black.copyWith(fontSize: 15),),
+                                          Icon(Icons.access_time_outlined , size: 17, color: ThemeColors().yellow,),
+                                          Text('${items[index]['duration']}' , style: ThemeFonts().black.copyWith(fontSize: 15),),
                                         ],
                                       ),
                                       Row(
                                         spacing: 2,
                                         children: [
-                                          Icon(Icons.location_on , size: 17, color: ThemeColors().yellow,),
-                                          Text('${items[index]['location']}' , style: ThemeFonts().black.copyWith(fontSize: 15),),
+                                          Icon(Icons.people_alt_outlined , size: 17, color: ThemeColors().yellow,),
+                                          Text('${items[index]['subscriptions']}' , style: ThemeFonts().black.copyWith(fontSize: 15),),
                                         ],
                                       ),
-                                      Text('المتطلبات:', style: ThemeFonts().black.copyWith(fontWeight: FontWeight.bold),),
-                                      ListView.separated(
-                                        shrinkWrap: true,
-                                        physics: NeverScrollableScrollPhysics(),
-                                        padding: EdgeInsets.zero,
-                                        separatorBuilder: (BuildContext context , int index){return SizedBox(height: 3);},
-                                        itemBuilder: (BuildContext context , int reqIndex){
-                                          return Row(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            spacing: 3,
-                                            children: [
-                                              Container(
-                                                width: 5,
-                                                height: 5,
-                                                color: ThemeColors().yellow,
-                                              ),
-                                              Text('${(items[index]['requires']as List)[reqIndex]}',style: ThemeFonts().black,)
-                                            ],
-                                          );
-                                        },
-                                        itemCount: (items[index]['requires'] as List).length,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: HexColor('${items[index]['bgColor']}'),
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Text('${items[index]['type']}' , style: ThemeFonts().black.copyWith(color: HexColor('${items[index]['textColor']}')),),
+                                        ),
                                       ),
-                                      SizedBox(height: 3,),
                                     ],
                                   ),
                                 ),
+
+
                                 Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
@@ -422,7 +409,7 @@ class _hiringScreenState extends State<hiringScreen> {
                                     child: MaterialButton(
                                       onPressed: () {},
                                       child: Text(
-                                        'قدمي الأن',
+                                        'سجلي في الدورة',
                                         style: ThemeFonts().white,
                                       ),
                                     ),
