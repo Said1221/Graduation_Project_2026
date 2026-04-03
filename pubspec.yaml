@@ -75,6 +75,11 @@ flutter:
     - assets/4.png
     - assets/5.png
     - assets/6.png
+    - assets/background.png
+    - assets/fatema.png
+    - assets/om_alaa.png
+    - assets/sara.png
+    - assets/nour.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
